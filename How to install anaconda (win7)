@@ -1,0 +1,32 @@
+在Windows环境下安装anaconda遇到的问题汇总
+
+首先，由于软件包数据源所在网站是在海外，所以会有网络连接失败，或者下载缓慢原因，所以使用国内镜像网站--清华大学开源软件镜像站。
+选择最新的anaconda版本，如果不知道该版本适用于什么系统环境，然后可以通过 upgrade更新来检测适合的版本
+
+在镜像网站下载完成以后，按照流程安装，安装文件需要空间大概是2G左右，可以自定义安装路径；在选择是否将信息添加到环境变量时可以打对勾
+
+安装时如果出现menu等失败，可能是缺失一些操作系统的动态链接库dll，可以通过360安全卫士进行打补丁
+
+
+安装之后，需要配置更新路径Anaconda安装成功之后，我们需要修改其包管理镜像为国内源。
+
+Tsinghua Open Source Mirror
+
+简单来说就是在cmd中分别运行这两个命令就好了。
+
+conda config --add channels https://mirrors.tuna.tsinghua.edu.cn/anaconda/pkgs/free/
+conda config --set show_channel_urls yes
+
+各个模块功能：
+Anaconda Navigator，是用于管理环境和包的 GUI
+Anaconda Prompt 终端，用于使用命令行界面来管理环境和包
+Spyder，是面向科学开发的 IDE
+我推荐在默认环境下更新所有的包。打开 Anaconda Prompt ，键入：
+
+conda upgrade --all
+扫描完包和环境以后会检测软件包的适合版本，当出现提示是否更新的时候输入 y以便让更新继续。
+第一次安装软件包版本一般都是很老旧的，可以使用一下命令查看各个软件包版本
+ conda --list
+更新到适合操作系统的版本以后，就会避免使用中的错误提示！以免发生一些错误提示！
+
+未完待续！！之后是一些其他第三方的软件包的安装，其实都是大同小异。
